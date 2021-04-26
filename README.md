@@ -1,0 +1,2 @@
+# NoStrippedLog
+Spigot plugin
