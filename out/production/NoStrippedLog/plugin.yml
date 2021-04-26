@@ -1,0 +1,11 @@
+name: NoStrippedLog
+version: 1.0
+author: dikahdoff
+main: com.dikahdoff.nsl.NSL
+api-version: 1.16
+description: Disable the stripping of logs
+commands:
+  nsl:
+    description: MainCommand
+    usage: /<command>
+    aliases: [nostrippedlog,nostrippedlogs]
