@@ -3,7 +3,7 @@ version: 1.0
 author: dikahdoff
 main: com.dikahdoff.nsl.NSL
 api-version: 1.16
-description: Disable the stripping of logs
+description: Disables the stripping of logs
 commands:
   nsl:
     description: MainCommand

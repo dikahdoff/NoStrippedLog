@@ -1,5 +1,6 @@
 package com.dikahdoff.nsl.events;
 
+import org.bukkit.Material;
 import org.bukkit.block.data.BlockData;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -17,9 +18,11 @@ public class PlayerEvents implements Listener {
         if(!player.hasPermission("nsl.bypass")) {
             if (event.getClickedBlock() != null) {
                 BlockData block = event.getClickedBlock().getBlockData();
-                if (block.getMaterial().name().toString().toLowerCase(Locale.ROOT).endsWith("_log") && event.getItem().getType().name().toLowerCase(Locale.ROOT).endsWith("_axe") && event.getAction() == Action.RIGHT_CLICK_BLOCK) {
-                    // Block is a log, item in hand is an axe and the right click on block interaction should be canceled.
-                    event.setCancelled(true);
+                if(block.getMaterial().name().toString().toLowerCase(Locale.ROOT).endsWith("_log") || block.getMaterial() == Material.CRIMSON_STEM || block.getMaterial() == Material.WARPED_STEM) {
+                    if (event.getItem().getType().name().toLowerCase(Locale.ROOT).endsWith("_axe") && event.getAction() == Action.RIGHT_CLICK_BLOCK) {
+                        // Block is a log, item in hand is an axe and the right click on block interaction should be canceled.
+                        event.setCancelled(true);
+                    }
                 }
             }
         }
