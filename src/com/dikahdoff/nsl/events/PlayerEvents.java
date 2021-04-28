@@ -16,7 +16,7 @@ public class PlayerEvents implements Listener {
         // Handler for PlayerInteract event
         Player player = event.getPlayer();
         if(!player.hasPermission("nsl.bypass")) {
-            if (event.getClickedBlock() != null) {
+            if (event.getClickedBlock() != null && event.getItem().getType() != null) {
                 BlockData block = event.getClickedBlock().getBlockData();
                 if(block.getMaterial().name().toString().toLowerCase(Locale.ROOT).endsWith("_log") || block.getMaterial() == Material.CRIMSON_STEM || block.getMaterial() == Material.WARPED_STEM) {
                     if (event.getItem().getType().name().toLowerCase(Locale.ROOT).endsWith("_axe") && event.getAction() == Action.RIGHT_CLICK_BLOCK) {
